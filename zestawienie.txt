@@ -1,0 +1,16 @@
+dolnoœl¹skie: 105
+kujawsko-pomorskie: 69
+lubelskie: 163
+lubuskie: 37
+³ódzkie: 91
+ma³opolskie: 307
+mazowieckie: 287
+opolskie: 64
+podkarpackie: 108
+podlaskie: 41
+pomorskie: 130
+œl¹skie: 261
+œwiêtokrzyskie: 45
+warmiñsko-mazurskie: 27
+wielkopolskie: 147
+zachodniopomorskie: 68

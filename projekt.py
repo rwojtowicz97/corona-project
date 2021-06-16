@@ -33,6 +33,16 @@ class NOP:
     symptoms_list = [reddening, fever, seizures, vomiting, swoon]
 
 
+def count_voivodeship(voivodeship):
+    counter = 0
+    for nop in nop_list:
+        if nop.voivodeship == voivodeship:
+            counter += 1
+        else:
+            continue
+    return counter
+
+
 for x in data:
     nop_list.append(NOP(x["DATE"], x["VOIVODESHIP"], x["REGION"], x["GENDER"], x["DESCRIPTION"]))
 
@@ -56,11 +66,34 @@ for nop in nop_list:
         continue
 
 
+
+count_voivodeship('lubelskie')
+
 with open('odpowiedzi.txt', 'w') as file:
     file.write(f'Ilość wczytanych NOPów: {len(nop_list)}\n')
     file.write(f'Ilość Kobiet: {women_counter}\n')
     file.write(f'Ilość Mężczyzn: {men_counter}\n')
     file.write(f'Ilość osób z gorączką w województwie pomorskim: {pomorskie_and_fever}\n')
+
+
+with open('zestawienie.txt', 'w') as file:
+    file.write('dolnośląskie: ' + str(count_voivodeship('dolnośląskie')))
+    file.write(f'\nkujawsko-pomorskie: '+ str(count_voivodeship('kujawsko-pomorskie')))
+    file.write(f'\nlubelskie: '+str(count_voivodeship('lubelskie')))
+    file.write(f'\nlubuskie: '+str(count_voivodeship('lubuskie')))
+    file.write(f'\nłódzkie: '+str(count_voivodeship('łódzkie')))
+    file.write(f'\nmałopolskie: '+str(count_voivodeship('małopolskie')))
+    file.write(f'\nmazowieckie: '+str(count_voivodeship('mazowieckie')))
+    file.write(f'\nopolskie: '+str(count_voivodeship('opolskie')))
+    file.write(f'\npodkarpackie: '+str(count_voivodeship('podkarpackie')))
+    file.write(f'\npodlaskie: '+str(count_voivodeship('podlaskie')))
+    file.write(f'\npomorskie: '+str(count_voivodeship('pomorskie')))
+    file.write(f'\nśląskie: '+str(count_voivodeship('śląskie')))
+    file.write(f'\nświętokrzyskie: '+str(count_voivodeship('świętokrzyskie')))
+    file.write(f'\nwarmińsko-mazurskie: '+str(count_voivodeship('warmińsko-mazurskie')))
+    file.write(f'\nwielkopolskie: '+str(count_voivodeship('wielkopolskie')))
+    file.write(f'\nzachodniopomorskie: '+str(count_voivodeship('zachodniopomorskie')))
+
 
 print(f'Ilość wczytanych NOPów: {len(nop_list)}')
 print(f'Ilość Kobiet: {women_counter}')
