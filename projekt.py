@@ -95,6 +95,17 @@ with open('zestawienie.txt', 'w') as file:
     file.write(f'\nzachodniopomorskie: '+str(count_voivodeship('zachodniopomorskie')))
 
 
+for nop in nop_list:
+    for symptom in nop.symptoms_list:
+        if symptom.name in nop.description:
+            print(nop.description)
+        else:
+            continue
+
+with open('lubuskie.txt', 'w') as file:
+    file.write('')
+
+
 print(f'Ilość wczytanych NOPów: {len(nop_list)}')
 print(f'Ilość Kobiet: {women_counter}')
 print(f'Ilość Mężczyzn: {men_counter}')
